@@ -10,7 +10,6 @@
 **CareerForge AI** is an **agentic AI–powered career guidance platform** that uses multiple specialized AI agents to help users learn skills, build resumes, prepare for interviews, and search for jobs. Instead of isolated tools, CareerForge delivers a **unified, intelligent career assistant** powered by structured agent orchestration.
 
 ---
-
 ## System Architecture & Workflow
 
 The platform uses a **LangGraph-based agent orchestration engine** where user intent is classified and routed to the appropriate specialized agent.
@@ -44,6 +43,7 @@ graph TD
     END --> API
     API -->|JSON Response| React
     React -->|UI Update| User
+```
 ## Key Features
 
 ### Agentic AI System
@@ -75,13 +75,13 @@ graph TD
 
 ## Tech Stack
 
-### Frontend
+Frontend
 - **Framework:** React (Vite)  
 - **Styling:** Tailwind CSS  
 - **Animations:** Framer Motion  
 - **HTTP Client:** Axios  
 
-### Backend
+Backend
 - **Language:** Python 3.9+  
 - **Framework:** FastAPI  
 - **Agent Orchestration:** LangGraph  
@@ -96,18 +96,18 @@ graph TD
 
 ## Installation & Local Setup
 
-###Backend Setup
+Backend Setup
 ```bash
 cd backend
 pip install -r requirements.txt
-uvicorn app.main:app --reload
-
-###Frontend Setup
+python -m uvicorn app.main:app --reload
+```
+Frontend Setup
 ```bash
 cd frontend
 npm install
 npm run dev
-
+```
 ## Example Use Cases
 - “Create a resume for a data science fresher”
 - “Conduct a mock interview for a backend developer role”
