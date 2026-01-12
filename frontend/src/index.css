@@ -1,0 +1,136 @@
+/* Import Google Fonts - Plus Jakarta Sans (Modern Tech Look) */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Brand Colors */
+  --primary-color: #00e5ff;
+  --secondary-color: #4facfe;
+  --accent-color: #7000ff;
+
+  /* Backgrounds */
+  --bg-dark: #050510;
+
+  /* Gradients */
+  --primary-gradient: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+  --text-gradient: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+
+  /* Glassmorphism Variables */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --glass-blur: blur(12px);
+}
+
+/* --- Global Reset & Base Styles --- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-dark);
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  /* The "Mesh" Background Effect */
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(79, 172, 254, 0.08), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(112, 0, 255, 0.08), transparent 25%);
+}
+
+/* Remove default Vite centering */
+#root {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+p {
+  color: #94a3b8; /* Soft grey for readability */
+  line-height: 1.6;
+}
+
+/* --- Reusable Utility Classes --- */
+
+/* 1. The "Glass" Card Effect */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+}
+
+/* 2. Gradient Text */
+.text-gradient {
+  background: linear-gradient(
+  90deg,
+  #4f46e5,
+  #9333ea,
+  #db2777
+);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+/* 3. Modern Button */
+.btn-primary {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
+}
+
+/* --- Navbar (Global) --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  /* Navbar Glass Effect */
+  background: rgba(5, 5, 16, 0.7);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.nav-links a {
+  margin-left: 32px;
+  color: #94a3b8;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
