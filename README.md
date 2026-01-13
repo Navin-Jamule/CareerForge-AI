@@ -12,7 +12,7 @@
 <p align="center">
   <img src="https://github.com/user-attachments/assets/e95c049e-23cb-4f8c-bb02-f07bb47ad151" width="500">
 </p>
----
+
 ## System Architecture & Workflow
 
 The platform uses a **LangGraph-based agent orchestration engine** where user intent is classified and routed to the appropriate specialized agent.
