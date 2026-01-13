@@ -10,7 +10,7 @@
 **CareerForge AI** is an **agentic AI–powered career guidance platform** that uses multiple specialized AI agents to help users learn skills, build resumes, prepare for interviews, and search for jobs. Instead of isolated tools, CareerForge delivers a **unified, intelligent career assistant** powered by structured agent orchestration.
 ---
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b56f483c-71b9-4557-ac7a-e7dc4a8cef73" width="500">
+  <img src="https://github.com/user-attachments/assets/e95c049e-23cb-4f8c-bb02-f07bb47ad151" width="500">
 </p>
 
 ## System Architecture & Workflow
