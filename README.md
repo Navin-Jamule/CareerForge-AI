@@ -19,24 +19,24 @@ The platform uses a **LangGraph-based agent orchestration engine** where user in
 
 ```mermaid
 graph TD
-    User((User)) -->|Career Query| React[React Frontend]
-    React -->|API Request| API[FastAPI Backend]
+    User((User)) -->|Query| React[React Frontend]
+    React -->|API| API[FastAPI Backend]
 
-    API -->|Invoke| LG[LangGraph Orchestrator]
+    API --> LG[LangGraph Orchestrator]
+    LG --> CAT[categorize]
 
-    LG -->|Intent Classification| CAT[categorize]
-
-    CAT -->|Learning| LEARN[Learning Agent]
+    CAT -->|Learn| LEARN[Learning Agent]
     CAT -->|Resume| RESUME[Resume Agent]
     CAT -->|Interview| INTERVIEW[Interview Agent]
-    CAT -->|Jobs| JOB[Job Search Agent]
+    CAT -->|Jobs| JOB[Job Agent]
 
-    LEARN -->|LLM Reasoning| OPENAI[OpenAI API]
-    RESUME -->|Resume Generation| OPENAI
-    INTERVIEW -->|Mock Interview Q&A| OPENAI
+    LEARN -->|LLM| OPENAI[OpenAI API]
+    RESUME -->|Resume| OPENAI
+    INTERVIEW -->|Q&A| OPENAI
 
-    JOB -->|Search Tool| GOOGLE[Custom Google Search API]
+    JOB -->|Search| GOOGLE[Google API]
     GOOGLE --> JOB
+    JOB -->|Curate| OPENAI
 
     LEARN --> END((End))
     RESUME --> END
@@ -44,8 +44,8 @@ graph TD
     JOB --> END
 
     END --> API
-    API -->|JSON Response| React
-    React -->|UI Update| User
+    API -->|JSON| React
+    React --> User
 ```
 ## Key Features
 
