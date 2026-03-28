@@ -15,6 +15,7 @@ class State(TypedDict):
     query: str
     category: str
     response: str
+    resume: str
 
 # -------------------------------
 # Query categorization node
