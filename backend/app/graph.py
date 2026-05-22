@@ -8,18 +8,14 @@ from app.agents.interview import interview_agent
 from app.agents.job import job_agent
 from app.utils.llm import run_chain
 
-# -------------------------------
 # State definition for LangGraph
-# -------------------------------
 class State(TypedDict):
     query: str
     category: str
     response: str
     resume: str
 
-# -------------------------------
 # Query categorization node
-# -------------------------------
 def categorize(state: State):
     """
     Classifies user intent into a fixed category.
@@ -42,9 +38,7 @@ def categorize(state: State):
     category = run_chain(prompt, {"query": state["query"]}).strip().lower()
     return {"category": category}
 
-# -------------------------------
 # Routing logic
-# -------------------------------
 def route_query(state: State):
     if state["category"] == "learn":
         return "learn"
@@ -56,9 +50,7 @@ def route_query(state: State):
         return "job"
     return END
 
-# -------------------------------
 # LangGraph construction
-# -------------------------------
 graph = StateGraph(State)
 
 graph.add_node("categorize", categorize)
